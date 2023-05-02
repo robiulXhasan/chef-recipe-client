@@ -5,6 +5,7 @@ import { useLoaderData } from "react-router-dom";
 import Chef from "../../component/Chef";
 import { Container } from "react-bootstrap";
 import LatestRecipes from "../../component/LatestRecipes";
+import JoinUs from "../../component/JoinUs";
 
 const Home = () => {
   const allData = useLoaderData();
@@ -29,11 +30,11 @@ const Home = () => {
         </div>
         <h2 className="mt-5 mb-4 ">- Latest Recipes </h2>
         <div className="latest-recipe">
-          
           {latestRecipe.map((recipe) => (
             <LatestRecipes key={recipe.id} recipe={recipe}></LatestRecipes>
           ))}
         </div>
+        <JoinUs></JoinUs>
       </Container>
     </div>
   );
