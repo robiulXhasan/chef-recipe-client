@@ -24,7 +24,7 @@ const Chef = ({ data }) => {
         </Card.Text>
       </Card.Body>
       <Button className="p-2 fw-semibold" variant="warning">
-        <Link>View Recipes</Link>
+        <Link to={`/recipe/${id}`}>View Recipes</Link>
       </Button>
     </Card>
   );
