@@ -9,7 +9,7 @@ const RecipeBanner = ({ data }) => {
         style={{
           background: "#f5d7a6",
         }}
-        className="banner  py-4"
+        className="banner bg-warning  py-4"
       >
         <Container className="bg-light p-3 rounded-4 ">
           <div className="row align-items-center">

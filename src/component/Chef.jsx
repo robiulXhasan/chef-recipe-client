@@ -7,7 +7,7 @@ const Chef = ({ data }) => {
   console.log(data);
   const { id, chef_name, chef_picture, number_of_recipes, total_likes, years_of_experience } = data;
   return (
-    <Card className="p-2">
+    <Card className="p-2 bg-light">
       <Card.Img variant="top" src={chef_picture} />
       <Card.Body>
         <div className="d-flex align-items-center">

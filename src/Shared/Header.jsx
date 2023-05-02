@@ -11,17 +11,21 @@ const Header = () => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="mx-auto gap-3 ">
+          <Nav className="ms-auto  gap-3 align-items-md-center ">
             <Link className="text-dark text-decoration-none fs-5 fw-semibold" to="/">
               Home
             </Link>
-            <Link className="text-dark text-decoration-none fs-5 fw-semibold" to="/blog">
-              Blog
+            <Link
+              className="text-dark text-decoration-none fs-5 fw-semibold me-0 me-md-5"
+              to="/blog"
+            >
+              Blogs
             </Link>
-          </Nav>
-          <Nav className=" gap-3 align-items-center">
-            <Link href="#deets">Profile</Link>
-            <Button variant="secondary">
+
+            <Link className="ms-0 ms-md-5" href="#deets">
+              Profile
+            </Link>
+            <Button variant="warning">
               <Link className="text-white text-decoration-none fs-5 fw-semibold" to="/login">
                 Login
               </Link>
