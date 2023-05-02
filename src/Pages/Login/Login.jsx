@@ -48,12 +48,14 @@ const Login = () => {
           <small className="text-danger"></small>
         </p>
         <h4 className="text-center">- OR -</h4>
-        <Button variant="dark" type="submit" className="w-100 p-2 fs-5 mb-3">
-          <FaGoogle /> Login with Google
-        </Button>
-        <Button variant="dark" type="submit" className="w-100 p-2 fs-5">
-          <FaGithub /> Login with Github
-        </Button>
+        <div className="d-flex  justify-content-between ">
+          <Button variant="dark" type="submit" className=" p-2 fs-5  ">
+            <FaGoogle /> Login with Google
+          </Button>
+          <Button variant="dark" type="submit" className=" p-2 fs-5">
+            <FaGithub /> Login with Github
+          </Button>
+        </div>
       </div>
     </Container>
   );
