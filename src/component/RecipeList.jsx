@@ -31,10 +31,10 @@ const RecipeList = ({ recipe }) => {
             ))}
           </ol>
         </div>
-        <p className="d-flex gap-2">
+        <div className="d-flex gap-2">
           <span className="fw-semibold">Rating:</span>{" "}
           <Rating style={{ maxWidth: 100 }} value={rating} readOnly /> <span>{rating}</span>
-        </p>
+        </div>
       </Card.Body>
 
       <Button className="p-2 fw-semibold" variant="warning">
