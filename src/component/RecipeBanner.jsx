@@ -16,7 +16,7 @@ const RecipeBanner = ({ data }) => {
           <div className="row align-items-center">
             <img className="col-12 col-md-6 rounded-4" src={chef_picture} alt="" />
             <div className="col-12 col-md-6 ">
-              <div  className="d-flex">
+              <div className="d-flex">
                 <h2 className="flex-grow-1">{chef_name}</h2>
                 <p className=" text-primary fs-4">
                   <FaRegThumbsUp /> <span className=" text-dark fw-semibold">{total_likes}</span>
@@ -30,13 +30,13 @@ const RecipeBanner = ({ data }) => {
                 Experience : <span className="text-warning fw-semibold">{years_of_experience}</span>{" "}
                 years{" "}
               </p>
-              <p>
-                Bio:{" "}
+              <div>
+                Bio: <br />
                 <p style={{ background: "#ebdaf1" }} className="border p-2 rounded">
                   {" "}
                   {chef_bio}
                 </p>
-              </p>
+              </div>
             </div>
           </div>
         </Container>

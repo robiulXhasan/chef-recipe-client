@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Card } from "react-bootstrap";
 import { Rating } from "@smastrom/react-rating";
-
 import "@smastrom/react-rating/style.css";
+import { ToastContainer, toast } from "react-toastify";
 
 const RecipeList = ({ recipe }) => {
+  const [favorite, setFavorite] = useState(false);
   const { recipe_image, recipe_name, rating, ingredients, cooking_method } = recipe;
+
+  const handleAddToFavorite = () => {
+    setFavorite(true);
+    toast("Recipe is Favorite!!");
+  };
   return (
     <Card className="p-2">
       <Card.Img variant="top" src={recipe_image} />
@@ -36,9 +42,15 @@ const RecipeList = ({ recipe }) => {
         </div>
       </Card.Body>
 
-      <Button className="p-2 fw-semibold" variant="warning">
+      <Button
+        onClick={handleAddToFavorite}
+        className="p-2 fw-semibold"
+        disabled={favorite}
+        variant="warning"
+      >
         Add to Favorite
       </Button>
+      <ToastContainer />
     </Card>
   );
 };
