@@ -1,13 +1,17 @@
 import React from "react";
-import { Button, Card } from "react-bootstrap";
+import { Card, CardImg } from "react-bootstrap";
 import { FaRegThumbsUp } from "react-icons/fa";
+import LazyLoad from "react-lazy-load";
 import { Link } from "react-router-dom";
 
 const Chef = ({ data }) => {
   const { id, chef_name, chef_picture, number_of_recipes, total_likes, years_of_experience } = data;
   return (
     <Card className="p-2 bg-light">
-      <Card.Img variant="top" src={chef_picture} />
+      <LazyLoad height={chef_picture.height} width={chef_picture.width}  threshold={0.95}>
+        <CardImg variant="top" src={chef_picture} />
+      </LazyLoad>
+
       <Card.Body>
         <div className="d-flex align-items-center">
           <Card.Title className="flex-grow-1  fw-bold">Chef: {chef_name} </Card.Title>

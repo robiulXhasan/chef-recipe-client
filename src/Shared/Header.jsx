@@ -18,11 +18,10 @@ const Header = () => {
   return (
     <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
       <Container>
-        <Navbar.Brand className="fw-bold fs-2" href="#home">
-          <Link to="/" className="text-decoration-none text-dark">
-            Chef Sa<span className="text-warning">vv</span>y
-          </Link>
-        </Navbar.Brand>
+        <Link to="/" className="fw-bold fs-2 text-decoration-none text-dark">
+          Chef Sa<span className="text-warning">vv</span>y
+        </Link>
+
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto  gap-3 align-items-md-center ">
@@ -30,8 +29,8 @@ const Header = () => {
             <ActiveLink to="/blog">Blogs</ActiveLink>
 
             {user ? (
-              <>
-                <div className="ms-0 ms-md-5" href="#deets">
+              <div className=" d-md-flex gap-md-4">
+                <div className="ms-0 ms-md-5  mb-4 mb-md-0">
                   <img
                     data-toggle="tooltip"
                     data-placement="bottom"
@@ -42,12 +41,15 @@ const Header = () => {
                     alt=""
                   />
                 </div>
-                <Button onClick={handleLogOut} variant="warning">
-                  <Link className="text-white text-decoration-none fs-5 fw-semibold" to="/login">
-                    Log Out
-                  </Link>
-                </Button>
-              </>
+
+                <Link
+                  onClick={handleLogOut}
+                  className="text-black py-2 px-3  bg-warning rounded text-decoration-none fs-5 fw-semibold"
+                  to="/login"
+                >
+                  Log Out
+                </Link>
+              </div>
             ) : (
               <Link
                 className="text-black py-2 px-3 bg-warning rounded text-decoration-none fs-5 fw-semibold"

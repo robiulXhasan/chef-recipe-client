@@ -92,12 +92,12 @@ const Login = () => {
             Login
           </Button>
         </Form>
-        <p className="text-center mt-2">
+        <div className="text-center mt-2">
           <small>Don’t Have An Account ? </small>{" "}
           <Link to="/register" className="text-decoration-none text-warning fw-bold">
             Register
           </Link>
-        </p>
+        </div>
         <p>
           <small className="text-danger">{error}</small>
         </p>

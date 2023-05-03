@@ -15,7 +15,7 @@ const Home = () => {
   const [latestRecipe, setLatestRecipe] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/recent-recipes")
+    fetch("https://chef-recipe-hunter-server-robiulxhasan.vercel.app/recent-recipes")
       .then((res) => res.json())
       .then((data) => setLatestRecipe(data))
       .catch((error) => console.log(error.message));
@@ -23,7 +23,7 @@ const Home = () => {
   return (
     <div>
       <Banner></Banner>
-     
+
       <Container>
         <h2 className="mt-5 mb-4 ">- Best Chefs </h2>
         <div className="chef-section">
