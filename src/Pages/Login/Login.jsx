@@ -62,7 +62,7 @@ const Login = () => {
       <ToastContainer />
       <div className="mx-auto w-50 my-5 p-5 shadow bg-white">
         <h3 className="text-center fw-bold">Login your account</h3>
-        <hr />
+        <hr className="text-warning " />
         <Form onSubmit={handleLogin}>
           <Form.Group className="mb-3">
             <Form.Label className="fw-semibold">Email address</Form.Label>
@@ -88,7 +88,7 @@ const Login = () => {
           <Form.Group className="mb-3">
             <Form.Check onClick={managePassword} type="checkbox" label="Show Password" />
           </Form.Group>
-          <Button variant="dark" type="submit" className="w-100 p-2 fs-5">
+          <Button variant="warning" type="submit" className="w-100 fw-semibold p-2 fs-5">
             Login
           </Button>
         </Form>
@@ -101,12 +101,22 @@ const Login = () => {
         <p>
           <small className="text-danger">{error}</small>
         </p>
-        <h4 className="text-center">- OR -</h4>
+        <h4 className="text-center">- Or -</h4>
         <div className="d-flex  justify-content-between ">
-          <Button onClick={handleGoogleLogin} variant="dark" type="submit" className=" p-2 fs-5  ">
+          <Button
+            onClick={handleGoogleLogin}
+            variant="warning"
+            type="submit"
+            className="fw-semibold p-2 fs-5  "
+          >
             <FaGoogle /> Login with Google
           </Button>
-          <Button onClick={handleGithubLogin} variant="dark" type="submit" className=" p-2 fs-5">
+          <Button
+            onClick={handleGithubLogin}
+            variant="warning"
+            type="submit"
+            className="fw-semibold p-2 fs-5"
+          >
             <FaGithub /> Login with Github
           </Button>
         </div>
