@@ -3,6 +3,7 @@ import { Button, Container, Form } from "react-bootstrap";
 import { toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
+import "../Login/Login.css";
 
 const Register = () => {
   const { createUser, profileUpdate, logOut } = useContext(AuthContext);
@@ -46,7 +47,7 @@ const Register = () => {
   };
   return (
     <Container>
-      <div className="mx-auto w-50 my-5 p-5 shadow bg-white">
+      <div className="mx-auto form-width my-5 p-5 shadow bg-white">
         <h3 className="text-center fw-bold">Register your account</h3>
         <hr className="text-warning" />
         <Form onSubmit={handleRegister}>

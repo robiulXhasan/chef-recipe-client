@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { ToastContainer } from "react-toastify";
+import "./Login.css";
 
 const Login = () => {
   const { LoginUser, googleLogin, githubLogin } = useContext(AuthContext);
@@ -60,7 +61,7 @@ const Login = () => {
   return (
     <Container>
       <ToastContainer />
-      <div className="mx-auto w-50 my-5 p-5 shadow bg-white">
+      <div className="mx-auto form-width my-5 p-5 shadow bg-white">
         <h3 className="text-center fw-bold">Login your account</h3>
         <hr className="text-warning " />
         <Form onSubmit={handleLogin}>
@@ -102,12 +103,12 @@ const Login = () => {
           <small className="text-danger">{error}</small>
         </p>
         <h4 className="text-center">- Or -</h4>
-        <div className="d-flex  justify-content-between ">
+        <div className="d-md-flex  text-center justify-content-md-between ">
           <Button
             onClick={handleGoogleLogin}
             variant="warning"
             type="submit"
-            className="fw-semibold p-2 fs-5  "
+            className="fw-semibold p-2 fs-5 mb-2 mb-md-0  "
           >
             <FaGoogle /> Login with Google
           </Button>
