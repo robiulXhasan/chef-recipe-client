@@ -2,16 +2,15 @@ import React, { useContext } from "react";
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
+import ActiveLink from "../component/ActiveLink";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
- 
+
   const handleLogOut = (event) => {
     event.preventDefault();
     logOut()
-      .then(() => {
-        
-      })
+      .then(() => {})
       .catch((error) => {
         console.error(error.message);
       });
@@ -20,20 +19,15 @@ const Header = () => {
     <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
       <Container>
         <Navbar.Brand className="fw-bold fs-2" href="#home">
-          Chef Sa<span className="text-warning">vv</span>y
+          <Link to="/" className="text-decoration-none text-dark">
+            Chef Sa<span className="text-warning">vv</span>y
+          </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto  gap-3 align-items-md-center ">
-            <Link className="text-dark text-decoration-none fs-5 fw-semibold" to="/">
-              Home
-            </Link>
-            <Link
-              className="text-dark text-decoration-none fs-5 fw-semibold me-0 me-md-5"
-              to="/blog"
-            >
-              Blogs
-            </Link>
+            <ActiveLink to="/">Home</ActiveLink>
+            <ActiveLink to="/blog">Blogs</ActiveLink>
 
             {user ? (
               <>
@@ -55,11 +49,12 @@ const Header = () => {
                 </Button>
               </>
             ) : (
-              <Button variant="warning">
-                <Link className="text-white text-decoration-none fs-5 fw-semibold" to="/login">
-                  Login
-                </Link>
-              </Button>
+              <Link
+                className="text-black py-2 px-3 bg-warning rounded text-decoration-none fs-5 fw-semibold"
+                to="/login"
+              >
+                Login
+              </Link>
             )}
           </Nav>
         </Navbar.Collapse>
