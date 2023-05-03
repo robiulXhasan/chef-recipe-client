@@ -6,7 +6,7 @@ import Chef from "../../component/Chef";
 import { Container } from "react-bootstrap";
 import LatestRecipes from "../../component/LatestRecipes";
 import JoinUs from "../../component/JoinUs";
-import { ToastContainer } from "react-toastify";
+
 import "react-toastify/dist/ReactToastify.css";
 
 const Home = () => {
@@ -23,7 +23,7 @@ const Home = () => {
   return (
     <div>
       <Banner></Banner>
-      <ToastContainer />
+     
       <Container>
         <h2 className="mt-5 mb-4 ">- Best Chefs </h2>
         <div className="chef-section">

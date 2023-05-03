@@ -1,13 +1,14 @@
 import React, { useContext, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
-import { toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 
 const Register = () => {
-  const { createUser, profileUpdate } = useContext(AuthContext);
+  const { createUser, profileUpdate, logOut } = useContext(AuthContext);
   const [error, setError] = useState("");
   const navigate = useNavigate();
+
   const handleRegister = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -24,15 +25,20 @@ const Register = () => {
 
     createUser(email, password)
       .then((result) => {
-        console.log(result.user);
         profileUpdate(name, photoURL)
           .then(() => {
             toast("Successfully Registered!!");
+            logOut()
+              .then(() => {
+                navigate("/login");
+              })
+              .catch((error) => {
+                console.log(error.message);
+              });
           })
           .catch((error) => {
             setError(error.message);
           });
-        navigate("/");
       })
       .catch((error) => {
         setError(error.message);
@@ -40,6 +46,7 @@ const Register = () => {
   };
   return (
     <Container>
+    
       <div className="mx-auto w-50 my-5 p-5 shadow bg-white">
         <h3 className="text-center fw-bold">Register your account</h3>
         <hr />

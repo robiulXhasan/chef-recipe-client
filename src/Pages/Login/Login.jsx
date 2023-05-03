@@ -3,6 +3,7 @@ import { Button, Container, Form } from "react-bootstrap";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../Providers/AuthProvider";
+import { ToastContainer } from "react-toastify";
 
 const Login = () => {
   const { LoginUser, googleLogin, githubLogin } = useContext(AuthContext);
@@ -58,6 +59,7 @@ const Login = () => {
   };
   return (
     <Container>
+      <ToastContainer />
       <div className="mx-auto w-50 my-5 p-5 shadow bg-white">
         <h3 className="text-center fw-bold">Login your account</h3>
         <hr />

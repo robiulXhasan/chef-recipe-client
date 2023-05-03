@@ -5,14 +5,15 @@ import { AuthContext } from "../Providers/AuthProvider";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
+ 
   const handleLogOut = (event) => {
     event.preventDefault();
     logOut()
       .then(() => {
-        console.log("Successfully Log Out!!");
+        
       })
       .catch((error) => {
-        console.log(error.message);
+        console.error(error.message);
       });
   };
   return (
@@ -36,9 +37,17 @@ const Header = () => {
 
             {user ? (
               <>
-                <Link className="ms-0 ms-md-5" href="#deets">
-                  Profile
-                </Link>
+                <div className="ms-0 ms-md-5" href="#deets">
+                  <img
+                    data-toggle="tooltip"
+                    data-placement="bottom"
+                    title={user?.displayName}
+                    style={{ height: "50px" }}
+                    className=" rounded-circle img-fluid"
+                    src={user?.photoURL}
+                    alt=""
+                  />
+                </div>
                 <Button onClick={handleLogOut} variant="warning">
                   <Link className="text-white text-decoration-none fs-5 fw-semibold" to="/login">
                     Log Out
