@@ -15,7 +15,7 @@ const Register = () => {
     const photoURL = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
-    setSuccess("");
+
     setError("");
     if (password < 6) {
       setError("Password Can not be less than 6 character long");
@@ -98,7 +98,6 @@ const Register = () => {
         </p>
         <p>
           <small className="text-danger">{error}</small>
-          <small className="text-success">{success}</small>
         </p>
       </div>
     </Container>

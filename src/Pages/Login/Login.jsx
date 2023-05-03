@@ -47,7 +47,9 @@ const Login = () => {
       });
   };
   //github login
-  const handleGithubLogin = () => {
+  const handleGithubLogin = (event) => {
+    event.preventDefault();
+    console.log(event);
     githubLogin()
       .then(() => {
         navigate("/");

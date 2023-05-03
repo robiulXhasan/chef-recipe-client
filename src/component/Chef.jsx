@@ -22,9 +22,13 @@ const Chef = ({ data }) => {
           Number of Recipes: <span className="text-warning fw-semibold">{number_of_recipes}</span>
         </Card.Text>
       </Card.Body>
-      <Button className="p-2 fw-semibold" variant="warning">
-        <Link to={`/recipe/${id}`}>View Recipes</Link>
-      </Button>
+
+      <Link
+        className="py-2 bg-warning text-center text-decoration-none text-black rounded fw-semibold"
+        to={`/chef/${id}`}
+      >
+        View Recipes
+      </Link>
     </Card>
   );
 };
