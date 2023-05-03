@@ -14,7 +14,7 @@ const JoinUs = () => {
         </div>
         <div className="col-12 col-md-6">
           <img
-            className="img-fluid rounded"
+            className="img-fluid rounded mt-5 mt-md-0"
             src="https://img.freepik.com/free-photo/medium-shot-people-indoors_23-2148893947.jpg?w=900&t=st=1683058797~exp=1683059397~hmac=71c78500c9077cfbaf899d48456e4309edf4f735bfff0dbf1353e88c4a70c025"
             alt=""
           />

@@ -1,12 +1,11 @@
 import React from "react";
-import banner from "../../public/banner.jpg";
 import { Container } from "react-bootstrap";
 
 const Banner = () => {
   return (
     <section className="banner bg-light">
       <Container className="bg-light p-3  ">
-        <div style={{ background: "#f5e9c6" }} className="row rounded-4  align-items-center p-4">
+        <div style={{ background: "#f5e9c6" }} className="row rounded-4  align-items-center p-4 mb-5">
           <div className="col-12 col-md-6 ">
             <h1 style={{ fontSize: "48px" }} className=" fw-semibold">
               Get Your Favorite <br /> Dishes Recipe from <br /> Best Chef
