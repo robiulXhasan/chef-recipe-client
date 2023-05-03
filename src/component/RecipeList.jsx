@@ -6,7 +6,6 @@ import "@smastrom/react-rating/style.css";
 
 const RecipeList = ({ recipe }) => {
   const { recipe_image, recipe_name, rating, ingredients, cooking_method } = recipe;
-  console.log(recipe);
   return (
     <Card className="p-2">
       <Card.Img variant="top" src={recipe_image} />

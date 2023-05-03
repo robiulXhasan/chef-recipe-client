@@ -4,7 +4,6 @@ import { FaRegThumbsUp } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Chef = ({ data }) => {
-  console.log(data);
   const { id, chef_name, chef_picture, number_of_recipes, total_likes, years_of_experience } = data;
   return (
     <Card className="p-2 bg-light">

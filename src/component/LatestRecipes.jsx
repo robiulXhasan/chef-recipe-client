@@ -5,7 +5,6 @@ import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 
 const LatestRecipes = ({ recipe }) => {
-  console.log(recipe);
   const { image_url, name, rating, chef } = recipe;
   return (
     <Card className="p-2">

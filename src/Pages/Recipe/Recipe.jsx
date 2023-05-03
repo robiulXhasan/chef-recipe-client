@@ -7,7 +7,6 @@ import "./Recipe.css";
 
 const Recipe = () => {
   const data = useLoaderData();
-  console.log(data);
   return (
     <div>
       <RecipeBanner key={data.id} data={data}></RecipeBanner>
