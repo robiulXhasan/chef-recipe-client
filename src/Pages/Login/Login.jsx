@@ -3,9 +3,10 @@ import { Button, Container, Form } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../Providers/AuthProvider";
+import { signInWithPopup } from "firebase/auth";
 
 const Login = () => {
-  const { LoginUser } = useContext(AuthContext);
+  const { LoginUser, googleLogin, githubLogin } = useContext(AuthContext);
 
   const [show, setShow] = useState(false);
   const [error, setError] = useState("");
@@ -21,8 +22,6 @@ const Login = () => {
     setError("");
     LoginUser(email, password)
       .then((result) => {
-        console.log(result.user);
-        alert("successfully logged in");
         navigate("/");
       })
       .catch((error) => {
@@ -35,6 +34,25 @@ const Login = () => {
     } else {
       setShow(false);
     }
+  };
+  // google login
+  const handleGoogleLogin = (event) => {
+    event.preventDefault();
+    googleLogin()
+      .then(() => {
+        navigate("/");
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
+  };
+  //github login
+  const handleGithubLogin = () => {
+    githubLogin()
+      .then(() => {
+        navigate("/");
+      })
+      .catch((error) => console.log(error.message));
   };
   return (
     <Container>
@@ -81,10 +99,10 @@ const Login = () => {
         </p>
         <h4 className="text-center">- OR -</h4>
         <div className="d-flex  justify-content-between ">
-          <Button variant="dark" type="submit" className=" p-2 fs-5  ">
+          <Button onClick={handleGoogleLogin} variant="dark" type="submit" className=" p-2 fs-5  ">
             <FaGoogle /> Login with Google
           </Button>
-          <Button variant="dark" type="submit" className=" p-2 fs-5">
+          <Button onClick={handleGithubLogin} variant="dark" type="submit" className=" p-2 fs-5">
             <FaGithub /> Login with Github
           </Button>
         </div>
