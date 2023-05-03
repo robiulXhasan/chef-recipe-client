@@ -1,9 +1,8 @@
 import React, { useContext, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../Providers/AuthProvider";
-import { signInWithPopup } from "firebase/auth";
 
 const Login = () => {
   const { LoginUser, googleLogin, githubLogin } = useContext(AuthContext);
@@ -12,7 +11,8 @@ const Login = () => {
   const [error, setError] = useState("");
 
   const navigate = useNavigate();
-
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
   const handleLogin = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -22,7 +22,7 @@ const Login = () => {
     setError("");
     LoginUser(email, password)
       .then((result) => {
-        navigate("/");
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         setError(error.message);
@@ -40,7 +40,7 @@ const Login = () => {
     event.preventDefault();
     googleLogin()
       .then(() => {
-        navigate("/");
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         setError(error.message);
@@ -52,7 +52,7 @@ const Login = () => {
     console.log(event);
     githubLogin()
       .then(() => {
-        navigate("/");
+        navigate(from, { replace: true });
       })
       .catch((error) => console.log(error.message));
   };
