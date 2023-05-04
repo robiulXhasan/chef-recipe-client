@@ -2,7 +2,7 @@ import React from "react";
 import { Container } from "react-bootstrap";
 import { FaRegThumbsUp } from "react-icons/fa";
 const RecipeBanner = ({ data }) => {
-  const { chef_name, chef_picture, number_of_recipes, total_likes, years_of_experience, chef_bio } =
+  const { chef_name, chef_picture, number_of_recipes, total_likes, years_of_experience, bio } =
     data;
   return (
     <div>
@@ -32,9 +32,9 @@ const RecipeBanner = ({ data }) => {
               </p>
               <div>
                 Bio: <br />
-                <p style={{ background: "#ebdaf1" }} className="border p-2 rounded">
+                <p style={{ background: "#ebdaf1" }} className="border px-2 py-4 rounded">
                   {" "}
-                  {chef_bio}
+                  {bio}
                 </p>
               </div>
             </div>

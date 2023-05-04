@@ -8,13 +8,18 @@ const Chef = ({ data }) => {
   const { id, chef_name, chef_picture, number_of_recipes, total_likes, years_of_experience } = data;
   return (
     <Card className="p-2 bg-light">
-      <LazyLoad height={chef_picture.height} width={chef_picture.width}  threshold={0.95}>
-        <CardImg variant="top" src={chef_picture} />
+      <LazyLoad height={chef_picture.height} width={chef_picture.width} threshold={0.95}>
+        <CardImg
+          style={{ height: "220px", backgroundPosition: "50% 50%" }}
+          className="img-fluid"
+          variant="top"
+          src={chef_picture}
+        />
       </LazyLoad>
 
       <Card.Body>
         <div className="d-flex align-items-center">
-          <Card.Title className="flex-grow-1  fw-bold">Chef: {chef_name} </Card.Title>
+          <Card.Title className="flex-grow-1  fw-bold">{chef_name} </Card.Title>
           <p className=" text-primary">
             <FaRegThumbsUp /> <span className=" text-dark fw-semibold">{total_likes}</span>
           </p>

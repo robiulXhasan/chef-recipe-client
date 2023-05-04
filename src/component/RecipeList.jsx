@@ -17,7 +17,7 @@ const RecipeList = ({ recipe }) => {
       <Card.Img variant="top" src={recipe_image} />
       <Card.Body>
         <div className="d-flex align-items-center">
-          <Card.Title className="flex-grow-1  fw-bold">Recipe Name: {recipe_name} </Card.Title>
+          <Card.Title className="flex-grow-1  fw-bold">{recipe_name} </Card.Title>
         </div>
         <div className="mb-0">
           <p className="fw-semibold mb-0">Ingredients:</p>
