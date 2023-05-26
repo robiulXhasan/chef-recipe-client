@@ -7,14 +7,6 @@ import ActiveLink from "../component/ActiveLink";
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
 
-  const handleLogOut = (event) => {
-    event.preventDefault();
-    logOut()
-      .then(() => {})
-      .catch((error) => {
-        console.error(error.message);
-      });
-  };
   return (
     <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
       <Container>

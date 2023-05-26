@@ -10,8 +10,8 @@ const Chef = ({ data }) => {
     <Card className="p-2 bg-light">
       <LazyLoad height={chef_picture.height} width={chef_picture.width} threshold={0.95}>
         <CardImg
-          style={{ height: "220px", backgroundPosition: "50% 50%" }}
-          className="img-fluid"
+        
+          className="img-fluid "
           variant="top"
           src={chef_picture}
         />
